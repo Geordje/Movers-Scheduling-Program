@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7D9919A-5219-4DEC-911B-240AFB0B1D9B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Movers_Scheduling_Program</RootNamespace>
+    <AssemblyName>Movers Scheduling Program</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo Simple.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoolerButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="helpPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpPopUp.Designer.cs">
+      <DependentUpon>helpPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionManager.cs" />
+    <Compile Include="Splashscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splashscreen.Designer.cs">
+      <DependentUpon>Splashscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="helpPopUp.resx">
+      <DependentUpon>helpPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splashscreen.resx">
+      <DependentUpon>Splashscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading Icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Animation - 1735766385008.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Animation - 1735766385008 %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Animation-17357663850081-ezgif.com-speed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guy with accent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Truck GIF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movers black divider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\irisless.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_fielkd.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty fielkd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truk-ezgif.com-crop %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black logo with divider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red MOVERS Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HouseRemovalsDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HouseRemovalsDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>HouseRemovalsDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Logo Simple.ico" />
+    <None Include="Resources\vertical grey divider.png" />
+    <None Include="Resources\Logo Simple.png" />
+    <None Include="Resources\customers2.png" />
+    <None Include="Resources\customers1.png" />
+    <None Include="Resources\customers.png" />
+    <None Include="Resources\employees.png" />
+    <None Include="Resources\availability.png" />
+    <None Include="Resources\recents.png" />
+    <None Include="Resources\clock black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movers Scheduling Program", "Movers Scheduling Program.csproj", "{E7D9919A-5219-4DEC-911B-240AFB0B1D9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7D9919A-5219-4DEC-911B-240AFB0B1D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D9919A-5219-4DEC-911B-240AFB0B1D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D9919A-5219-4DEC-911B-240AFB0B1D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D9919A-5219-4DEC-911B-240AFB0B1D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A48DC00-7D9E-4B72-8A0C-7B460CA442F9}
+	EndGlobalSection
+EndGlobal
