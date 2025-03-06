@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,38 +47,47 @@ namespace Movers_Scheduling_Program
 
         private void loginbutton_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\Geordie#\\Documents\\6th Form\\SSD\\Movers-Coursework\\Movers-Coursework\\HouseRemovalsDatabase.mdf\";Integrated Security=True;Encrypt=True;User Instance=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                string query = "SELECT COUNT(*) FROM [dbo].[Users] WHERE [Username] = @Username AND [Password] = @Password";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Username", UsernameField.Text);
-                command.Parameters.AddWithValue("@Password", PasswordField.Text);
-                int userCount = (int)command.ExecuteScalar();
-                if (userCount > 0)
+                string connectionString = "Server=34.142.30.150;Database=movers;User Id=ApplicationUser;Password=averygoodpassword123;";
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    MessageBox.Show("Login successful!");
-                    Home home = new Home();
-                    home.Username = UsernameField.Text;
-                    this.Hide();
-                    home.ShowDialog();
-                    this.Close();
-
-
-                }
-                else
-                {
-                    failedAttempts++;
-                    MessageBox.Show("Invalid username or password.");
-
-                    if (failedAttempts >= maxFailedAttempts)
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM Staff WHERE Username = @Username AND Password = @Password";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Username", UsernameField.Text);
+                    command.Parameters.AddWithValue("@Password", PasswordField.Text);
+                    int userCount = Convert.ToInt32(command.ExecuteScalar());   
+                    if (userCount == 1)
                     {
-                        MessageBox.Show("Maximum failed attempts reached. The application will now close.");
-                        Application.Exit();
+                        MessageBox.Show("Login successful!");
+                        Home home = new Home();
+                        home.Username = UsernameField.Text;
+                        this.Hide();
+                        home.ShowDialog();
+                        this.Close();
+
+
+                    }
+                    else
+                    {
+                        failedAttempts++;
+                        MessageBox.Show("Invalid username or password.");
+
+                        if (failedAttempts >= maxFailedAttempts)
+                        {
+                            MessageBox.Show("Maximum failed attempts reached. The application will now close.");
+                            Application.Exit();
+                        }
                     }
                 }
             }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
         }
+    
     }
 }
