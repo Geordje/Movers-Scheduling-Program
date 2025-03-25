@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Movers_Scheduling_Program
 {
@@ -29,9 +30,9 @@ namespace Movers_Scheduling_Program
         }
         private void Show_MouseLeave(object sender, EventArgs e)
         {
-                PasswordField.PasswordChar = '⛟';
-                Show.Image = Properties.Resources.irisless;
-            
+            PasswordField.PasswordChar = '⛟';
+            Show.Image = Properties.Resources.irisless;
+
         }
         private void Show_MouseUp(object sender, MouseEventArgs e)
         {
@@ -49,35 +50,42 @@ namespace Movers_Scheduling_Program
         {
             try
             {
-                string connectionString = "Server=34.142.30.150;Database=movers;User Id=ApplicationUser;Password=averygoodpassword123;";
+                string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT COUNT(*) FROM Staff WHERE Username = @Username AND Password = @Password";
+                    string query = "SELECT Username, FirstName, SecondName, Email, PhoneNo, Role FROM Staff WHERE Username = @Username AND Password = @Password";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Username", UsernameField.Text);
                     command.Parameters.AddWithValue("@Password", PasswordField.Text);
-                    int userCount = Convert.ToInt32(command.ExecuteScalar());   
-                    if (userCount == 1)
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        MessageBox.Show("Login successful!");
-                        Home home = new Home();
-                        home.Username = UsernameField.Text;
-                        this.Hide();
-                        home.ShowDialog();
-                        this.Close();
-
-
-                    }
-                    else
-                    {
-                        failedAttempts++;
-                        MessageBox.Show("Invalid username or password.");
-
-                        if (failedAttempts >= maxFailedAttempts)
+                        if (reader.Read())
                         {
-                            MessageBox.Show("Maximum failed attempts reached. The application will now close.");
-                            Application.Exit();
+                            string username = reader.GetString("Username");
+                            string firstName = reader.GetString("FirstName");
+                            string secondName = reader.GetString("SecondName");
+                            string email = reader.GetString("Email");
+                            string phoneNo = reader.GetString("PhoneNo");
+                            string role = reader.GetString("Role");
+
+                            SessionManager.InitializeSession(username, firstName, secondName, email, phoneNo, role);
+
+                            Home home = new Home();
+                            this.Hide();
+                            home.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            failedAttempts++;
+                            MessageBox.Show("Invalid username or password.");
+
+                            if (failedAttempts >= maxFailedAttempts)
+                            {
+                                MessageBox.Show("Maximum failed attempts reached. The application will now close.");
+                                Application.Exit();
+                            }
                         }
                     }
                 }
@@ -86,8 +94,14 @@ namespace Movers_Scheduling_Program
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
         }
-    
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            this.Hide();
+            home.ShowDialog();
+            this.Close();
+        }
     }
 }
