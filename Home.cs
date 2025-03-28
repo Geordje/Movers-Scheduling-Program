@@ -305,7 +305,7 @@ namespace Movers_Scheduling_Program
                     Fragiles.Text = Convert.ToBoolean(reader["Fragiles"]) ? "Fragiles" : "None";
                     JobNotes.Text = reader["JobNotes"].ToString();
                     NoOfBoxes.Text = reader["NoOfBoxes"].ToString() + " Boxes";
-                    BuildingAPacking.Text = Convert.ToBoolean(reader["Packed"]) ? "Packing" : "No Packing";
+                    BuildingAPacking.Text = Convert.ToBoolean(reader["Packed"]) ? "Packed" : "Not Packed";
                     BuildingADissasembly.Text = Convert.ToBoolean(reader["Disassembly"]) ? "Disassembly" : "No Disassembly";
                     BuildingBReassembly.Text = Convert.ToBoolean(reader["Reassembly"]) ? "Reassembly" : "No Reassembly";
                     NoOfDays.Text = reader["NoOfDays"].ToString() + " Days";
