@@ -58,7 +58,7 @@ namespace Movers_Scheduling_Program
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Username", UsernameField.Text);
                     command.Parameters.AddWithValue("@Password", PasswordField.Text);
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    using (MySqlDataReader reader = command.ExecuteReader())  
                     {
                         if (reader.Read())
                         {

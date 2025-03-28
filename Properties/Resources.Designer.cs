@@ -223,6 +223,16 @@ namespace Movers_Scheduling_Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Group_57 {
+            get {
+                object obj = ResourceManager.GetObject("Group 57", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guy_with_accent {
             get {
                 object obj = ResourceManager.GetObject("guy with accent", resourceCulture);

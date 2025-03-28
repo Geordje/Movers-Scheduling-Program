@@ -156,6 +156,12 @@ namespace Movers_Scheduling_Program
                 }
 
                 dataGridView1.DataSource = dataTable;
+
+                // Set DataGridView properties
+                dataGridView1.BackgroundColor = Color.White;
+                dataGridView1.RowTemplate.Height = 40;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.Columns["DetailsButton"].DisplayIndex = dataGridView1.Columns.Count - 1;
             }
         }
 
@@ -237,7 +243,108 @@ namespace Movers_Scheduling_Program
             if (e.ColumnIndex == dataGridView1.Columns["DetailsButton"].Index && e.RowIndex >= 0)
             {
                 selectedJobId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idJob"].Value);
+                UpdateJobDetails(selectedJobId);
                 Page.SetPage(JobInfo);
+            }
+        }
+        private void UpdateJobDetails(int jobId)
+        {
+            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = $@"
+                    SELECT Job.idJob, 
+                           CONCAT(Customer.CustomerForename, ' ', Customer.CustomerSurname) AS CustomerFullName, 
+                           Customer.CustomerPhoneNo, 
+                           Customer.CustomerEmail, 
+                           buildingsA.Address AS BuildingAAddress, 
+                           buildingsA.BuildingType AS BuildingABuildingType, 
+                           buildingsA.NoOfRooms AS BuildingARooms, 
+                           buildingsA.Postcode AS BuildingAPostcode, 
+                           buildingsB.Address AS BuildingBAddress, 
+                           buildingsB.BuildingType AS BuildingBType, 
+                           buildingsB.NoOfRooms AS BuildingBRooms, 
+                           buildingsB.Postcode AS BuildingBPostcode, 
+                           DATE_FORMAT(JobTimeInstance.DayOccurance, '%Y-%m-%d') AS TimeInstance, 
+                           Job.Fragiles, 
+                           Job.Packed, 
+                           Job.Disassembly, 
+                           Job.Reassembly, 
+                           Job.JobNotes,
+                           Job.NoOfBoxes,
+                           Job.Packed,
+                           Job.Disassembly,
+                           Job.Reassembly,
+                           (SELECT COUNT(*) FROM JobTimeInstance WHERE JobTimeInstance.JobID = Job.idJob) AS NoOfDays
+                    FROM Job
+                    JOIN JobTimeInstance ON Job.idJob = JobTimeInstance.JobID
+                    JOIN Building AS buildingsA ON Job.BuildingA = buildingsA.BuildingID
+                    JOIN Building AS buildingsB ON Job.BuildingB = buildingsB.BuildingID
+                    JOIN Customer ON Job.CustomerID = Customer.idCustomer
+                    WHERE Job.idJob = {jobId}";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    CustomerName.Text = reader["CustomerFullName"].ToString();
+                    CustomerPhoneNumber.Text = reader["CustomerPhoneNo"].ToString();
+                    CustomerEmail.Text = reader["CustomerEmail"].ToString();
+                    BuildingAAddress.Text = reader["BuildingAAddress"].ToString();
+                    BuildingABuildingType.Text = reader["BuildingABuildingType"].ToString();
+                    BuildingARooms.Text = reader["BuildingARooms"].ToString() + " rooms";
+                    label3.Text = reader["BuildingAPostcode"].ToString();
+                    BuildingBAddress.Text = reader["BuildingBAddress"].ToString();
+                    BuildingBType.Text = reader["BuildingBType"].ToString();
+                    BuildingBRooms.Text = reader["BuildingBRooms"].ToString() + " rooms";
+                    BuildingBPostcode.Text = reader["BuildingBPostcode"].ToString();
+                    DateStarting.Text = reader["TimeInstance"].ToString();
+                    Fragiles.Text = Convert.ToBoolean(reader["Fragiles"]) ? "Fragiles" : "No Fragiles";
+                    JobNotes.Text = reader["JobNotes"].ToString();
+                    NoOfBoxes.Text = reader["NoOfBoxes"].ToString() + " Boxes";
+                    BuildingAPacking.Text = Convert.ToBoolean(reader["Packed"]) ? "Packing" : "No Packing";
+                    BuildingADissasembly.Text = Convert.ToBoolean(reader["Disassembly"]) ? "Disassembly" : "No Disassembly";
+                    BuildingBReassembly.Text = Convert.ToBoolean(reader["Reassembly"]) ? "Reassembly" : "No Reassembly";
+                    NoOfDays.Text = reader["NoOfDays"].ToString() + " Days";
+                }
+                reader.Close();
+
+                // Retrieve all time instances for the job
+                string timeInstancesQuery = $@"
+                    SELECT DATE_FORMAT(DayOccurance, '%Y-%m-%d') AS DateOnly
+                    FROM JobTimeInstance
+                    WHERE JobID = {jobId}";
+
+                MySqlCommand timeInstancesCommand = new MySqlCommand(timeInstancesQuery, connection);
+                MySqlDataReader timeInstancesReader = timeInstancesCommand.ExecuteReader();
+
+                StringBuilder timeInstancesBuilder = new StringBuilder();
+                while (timeInstancesReader.Read())
+                {
+                    timeInstancesBuilder.AppendLine(timeInstancesReader["DateOnly"].ToString());
+                }
+                TimeInstances.Text = timeInstancesBuilder.ToString();
+                timeInstancesReader.Close();
+
+                // Retrieve all staff names and roles associated with the job
+                string staffQuery = $@"
+                    SELECT CONCAT(Staff.FirstName, ' ', Staff.SecondName) AS StaffFullName, Staff.Role
+                    FROM StaffAssign
+                    JOIN Staff ON StaffAssign.StaffUsername = Staff.Username
+                    WHERE StaffAssign.JobID = {jobId}";
+
+                MySqlCommand staffCommand = new MySqlCommand(staffQuery, connection);
+                MySqlDataReader staffReader = staffCommand.ExecuteReader();
+
+                StringBuilder staffBuilder = new StringBuilder();
+                while (staffReader.Read())
+                {
+                    staffBuilder.AppendLine($"{staffReader["StaffFullName"]} - {staffReader["Role"]}");
+                }
+                AssignedEmployees.Text = staffBuilder.ToString();
             }
         }
     }

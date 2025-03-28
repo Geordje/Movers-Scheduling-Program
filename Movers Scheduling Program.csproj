@@ -308,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo Simple.ico" />
+    <None Include="Resources\Group 57.png" />
     <None Include="Resources\Frame 12.png" />
     <None Include="Resources\Rectangle 66.png" />
     <None Include="Resources\Frame 10.png" />
