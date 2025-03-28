@@ -301,7 +301,7 @@ namespace Movers_Scheduling_Program
                     BuildingBType.Text = reader["BuildingBType"].ToString();
                     BuildingBRooms.Text = reader["BuildingBRooms"].ToString() + " rooms";
                     BuildingBPostcode.Text = reader["BuildingBPostcode"].ToString();
-                    DateStarting.Text = reader["TimeInstance"].ToString();
+                    DateStarting.Text = reader["TimeInstance"].ToLongDateString();
                     Fragiles.Text = Convert.ToBoolean(reader["Fragiles"]) ? "Fragiles" : "None";
                     JobNotes.Text = reader["JobNotes"].ToString();
                     NoOfBoxes.Text = reader["NoOfBoxes"].ToString() + " Boxes";
