@@ -22,8 +22,6 @@ namespace Movers_Scheduling_Program
     public partial class Home : Form
     {
         private Cloudinary cloudinary;
-
-        // Define the three variables
         private bool isNext;
         private int timeValue;
         private string timeUnit;
@@ -32,17 +30,29 @@ namespace Movers_Scheduling_Program
         public Home()
         {
             InitializeComponent();
-            label1.Text = "Welcome " + SessionManager.FirstName + " " + SessionManager.SecondName;
-            Account account = new Account(
-                "dvkxm0kra",
-                "345524937891459",
-                "aYs2jg_r0hLSzQ2m8UD_7syEGxU");
-            cloudinary = new Cloudinary(account);
+            InitializeCloudinary();
+            SetWelcomeMessage();
+            LoadProfilePicture();
+            InitializeVariables();
+            AttachEventHandlers();
+        }
 
+        private void InitializeCloudinary()
+        {
+            Account account = new Account("dvkxm0kra", "345524937891459", "aYs2jg_r0hLSzQ2m8UD_7syEGxU");
+            cloudinary = new Cloudinary(account);
+        }
+
+        private void SetWelcomeMessage()
+        {
+            label1.Text = "Welcome " + SessionManager.FirstName + " " + SessionManager.SecondName;
+        }
+
+        private void LoadProfilePicture()
+        {
             try
             {
                 string imageUrl = cloudinary.Api.UrlImgUp.BuildUrl($"{SessionManager.Username}.jpg");
-
                 using (WebClient webClient = new WebClient())
                 {
                     byte[] imageBytes = webClient.DownloadData(imageUrl);
@@ -59,14 +69,19 @@ namespace Movers_Scheduling_Program
             {
                 MessageBox.Show($"Error loading image: {ex.Message}");
             }
+        }
 
-            // Initialize the variables
-            isNext = true; // Example: true for next, false for previous
-            timeValue = 4; // Example: 4
-            timeUnit = "days"; // Example: "days"
+        private void InitializeVariables()
+        {
+            isNext = true;
+            timeValue = 4;
+            timeUnit = "days";
+        }
 
-            // Wire up the CellContentClick event
+        private void AttachEventHandlers()
+        {
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            AssignedEmployees.CellContentClick += AssignedEmployees_CellContentClick;
         }
 
         private void SetProfilePicture(Cloudinary cloudinary)
@@ -75,24 +90,69 @@ namespace Movers_Scheduling_Program
             bunifuButton8.IdleIconLeftImage = Image.FromStream(new System.Net.WebClient().OpenRead(imageUrl));
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
+        private void rjButton1_Click(object sender, EventArgs e) { }
 
+        private void AssignedEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && AssignedEmployees.Columns[e.ColumnIndex].Name == "ProfileButton")
+            {
+                var cellValue = AssignedEmployees.Rows[e.RowIndex].Cells["Username"].Value;
+                string username = cellValue.ToString();
+                DisplayProfile(username);
+                
+               
+            }
+        }
+
+        private void LoadEmployees()
+        {
+            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                    SELECT Username, 
+                           CONCAT(FirstName, ' ', SecondName) AS FullName, 
+                           Role 
+                    FROM Staff";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                if (!AssignedEmployees.Columns.Contains("ProfileButton"))
+                {
+                    DataGridViewButtonColumn profileButtonColumn = new DataGridViewButtonColumn
+                    {
+                        Name = "ProfileButton",
+                        HeaderText = "Profile",
+                        Text = "View Profile",
+                        UseColumnTextForButtonValue = true
+                    };
+                    AssignedEmployees.Columns.Add(profileButtonColumn);
+                }
+                AssignedEmployees.DataSource = dataTable;
+                AssignedEmployees.BackgroundColor = Color.White;
+                AssignedEmployees.RowTemplate.Height = 40;
+                AssignedEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                AssignedEmployees.Columns["ProfileButton"].DisplayIndex = AssignedEmployees.Columns.Count - 1;
+            }
+        }
+
+        private void DisplayProfile(string username)
+        {
+            SessionManager.Username = username;
+            Page.SetPage(prof);
+            pageName.Text = "Profile";
+            LoadProfileInformation(username);
         }
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            // Retrieve values from controls
             string tenseValue = tense.SelectedItem.ToString().ToLower();
             int amountValue = (int)amount.Value;
             string unitValue = unit.SelectedItem.ToString().ToLower();
-
-            // Update variables based on control values
             isNext = tenseValue == "next";
             timeValue = amountValue;
             timeUnit = unitValue;
-
-            // Convert plural time units to singular
             switch (timeUnit)
             {
                 case "hours":
@@ -110,54 +170,45 @@ namespace Movers_Scheduling_Program
                 default:
                     throw new ArgumentException("Invalid time unit");
             }
+            LoadJobs();
+        }
 
+        private void LoadJobs()
+        {
             string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-
-                // Calculate the date range based on the variables
-                string dateCondition;
-                if (isNext)
-                {
-                    dateCondition = $"CURDATE() AND DATE_ADD(CURDATE(), INTERVAL {timeValue} {timeUnit})";
-                }
-                else
-                {
-                    dateCondition = $"DATE_SUB(CURDATE(), INTERVAL {timeValue} {timeUnit}) AND CURDATE()";
-                }
-
+                string dateCondition = isNext
+                    ? $"CURDATE() AND DATE_ADD(CURDATE(), INTERVAL {timeValue} {timeUnit})"
+                    : $"DATE_SUB(CURDATE(), INTERVAL {timeValue} {timeUnit}) AND CURDATE()";
                 string query = $@"
-                    SELECT Job.idJob, 
-                           CONCAT(Customer.CustomerForename, ' ', Customer.CustomerSurname) AS CustomerFullName, 
-                           buildingsA.Address AS BuildingAAddress, 
-                           buildingsB.Address AS BuildingBAddress, 
-                           JobTimeInstance.DayOccurance AS TimeInstance
-                    FROM Job
-                    JOIN JobTimeInstance ON Job.idJob = JobTimeInstance.JobID
-                    JOIN Building AS buildingsA ON Job.BuildingA = buildingsA.BuildingID
-                    JOIN Building AS buildingsB ON Job.BuildingB = buildingsB.BuildingID
-                    JOIN Customer ON Job.CustomerID = Customer.idCustomer
-                    WHERE JobTimeInstance.DayOccurance BETWEEN {dateCondition}";
-
+                        SELECT Job.idJob, 
+                               CONCAT(Customer.CustomerForename, ' ', Customer.CustomerSurname) AS CustomerFullName, 
+                               buildingsA.Address AS BuildingAAddress, 
+                               buildingsB.Address AS BuildingBAddress, 
+                               JobTimeInstance.DayOccurance AS TimeInstance
+                        FROM Job
+                        JOIN JobTimeInstance ON Job.idJob = JobTimeInstance.JobID
+                        JOIN Building AS buildingsA ON Job.BuildingA = buildingsA.BuildingID
+                        JOIN Building AS buildingsB ON Job.BuildingB = buildingsB.BuildingID
+                        JOIN Customer ON Job.CustomerID = Customer.idCustomer
+                        WHERE JobTimeInstance.DayOccurance BETWEEN {dateCondition}";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
-
-                // Add a button column to the DataGridView
                 if (!dataGridView1.Columns.Contains("DetailsButton"))
                 {
-                    DataGridViewButtonColumn detailsButtonColumn = new DataGridViewButtonColumn();
-                    detailsButtonColumn.Name = "DetailsButton";
-                    detailsButtonColumn.HeaderText = "Details";
-                    detailsButtonColumn.Text = "View Details";
-                    detailsButtonColumn.UseColumnTextForButtonValue = true;
+                    DataGridViewButtonColumn detailsButtonColumn = new DataGridViewButtonColumn
+                    {
+                        Name = "DetailsButton",
+                        HeaderText = "Details",
+                        Text = "View Details",
+                        UseColumnTextForButtonValue = true
+                    };
                     dataGridView1.Columns.Add(detailsButtonColumn);
                 }
-
                 dataGridView1.DataSource = dataTable;
-
-                // Set DataGridView properties
                 dataGridView1.BackgroundColor = Color.White;
                 dataGridView1.RowTemplate.Height = 40;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -165,25 +216,63 @@ namespace Movers_Scheduling_Program
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void LoadProfileInformation(string username)
         {
-
+            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"
+                        SELECT Username, 
+                               CONCAT(FirstName, ' ', SecondName) AS FullName, 
+                               Email, 
+                               Role
+                        FROM Staff 
+                        WHERE Username = @Username";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    FullName.Text = reader["FullName"].ToString();
+                    Username.Text = reader["Username"].ToString();
+                    Email.Text = reader["Email"].ToString();
+                    Role.Text = reader["Role"].ToString();
+                    AccessLevel.Text = (reader["Role"].ToString().ToLower() == "it admin" || reader["Role"].ToString().ToLower() == "manager") ? "Higher" : "typical";
+                }
+                reader.Close();
+                LoadProfilePicture(username);
+            }
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void LoadProfilePicture(string username)
         {
+            string imageUrl = cloudinary.Api.UrlImgUp.BuildUrl("profilepictures/" + username + ".jpg");
+            using (WebClient webClient = new WebClient())
+            {
+                try
+                {
+                    byte[] imageBytes = webClient.DownloadData(imageUrl);
+                    using (var ms = new System.IO.MemoryStream(imageBytes))
+                    {
+                        Image image = Image.FromStream(ms);
+                        userpfp.Image = new Bitmap(image);
+                    }
+                }
+                catch (Exception e)
+                {
 
+                }
+            }
         }
 
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e) { }
 
-        }
+        private void Home_Load(object sender, EventArgs e) { }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
+        private void pictureBox12_Click(object sender, EventArgs e) { }
 
-        }
+        private void pictureBox4_Click(object sender, EventArgs e) { }
 
         private void Recents_Click(object sender, EventArgs e)
         {
@@ -238,6 +327,7 @@ namespace Movers_Scheduling_Program
             Page.SetPage(prof);
             pageName.Text = "My Profile";
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["DetailsButton"].Index && e.RowIndex >= 0)
@@ -247,47 +337,45 @@ namespace Movers_Scheduling_Program
                 Page.SetPage(JobInfo);
             }
         }
+
         private void UpdateJobDetails(int jobId)
         {
             string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-
                 string query = $@"
-                    SELECT Job.idJob, 
-                           CONCAT(Customer.CustomerForename, ' ', Customer.CustomerSurname) AS CustomerFullName, 
-                           Customer.CustomerPhoneNo, 
-                           Customer.CustomerEmail, 
-                           buildingsA.Address AS BuildingAAddress, 
-                           buildingsA.BuildingType AS BuildingABuildingType, 
-                           buildingsA.NoOfRooms AS BuildingARooms, 
-                           buildingsA.Postcode AS BuildingAPostcode, 
-                           buildingsB.Address AS BuildingBAddress, 
-                           buildingsB.BuildingType AS BuildingBType, 
-                           buildingsB.NoOfRooms AS BuildingBRooms, 
-                           buildingsB.Postcode AS BuildingBPostcode, 
-                           DATE_FORMAT(JobTimeInstance.DayOccurance, '%Y-%m-%d') AS TimeInstance, 
-                           Job.Fragiles, 
-                           Job.Packed, 
-                           Job.Disassembly, 
-                           Job.Reassembly, 
-                           Job.JobNotes,
-                           Job.NoOfBoxes,
-                           Job.Packed,
-                           Job.Disassembly,
-                           Job.Reassembly,
-                           (SELECT COUNT(*) FROM JobTimeInstance WHERE JobTimeInstance.JobID = Job.idJob) AS NoOfDays
-                    FROM Job
-                    JOIN JobTimeInstance ON Job.idJob = JobTimeInstance.JobID
-                    JOIN Building AS buildingsA ON Job.BuildingA = buildingsA.BuildingID
-                    JOIN Building AS buildingsB ON Job.BuildingB = buildingsB.BuildingID
-                    JOIN Customer ON Job.CustomerID = Customer.idCustomer
-                    WHERE Job.idJob = {jobId}";
-
+                        SELECT Job.idJob, 
+                               CONCAT(Customer.CustomerForename, ' ', Customer.CustomerSurname) AS CustomerFullName, 
+                               Customer.CustomerPhoneNo, 
+                               Customer.CustomerEmail, 
+                               buildingsA.Address AS BuildingAAddress, 
+                               buildingsA.BuildingType AS BuildingABuildingType, 
+                               buildingsA.NoOfRooms AS BuildingARooms, 
+                               buildingsA.Postcode AS BuildingAPostcode, 
+                               buildingsB.Address AS BuildingBAddress, 
+                               buildingsB.BuildingType AS BuildingBType, 
+                               buildingsB.NoOfRooms AS BuildingBRooms, 
+                               buildingsB.Postcode AS BuildingBPostcode, 
+                               DATE_FORMAT(JobTimeInstance.DayOccurance, '%Y-%m-%d') AS TimeInstance, 
+                               Job.Fragiles, 
+                               Job.Packed, 
+                               Job.Disassembly, 
+                               Job.Reassembly, 
+                               Job.JobNotes,
+                               Job.NoOfBoxes,
+                               Job.Packed,
+                               Job.Disassembly,
+                               Job.Reassembly,
+                               (SELECT COUNT(*) FROM JobTimeInstance WHERE JobTimeInstance.JobID = Job.idJob) AS NoOfDays
+                        FROM Job
+                        JOIN JobTimeInstance ON Job.idJob = JobTimeInstance.JobID
+                        JOIN Building AS buildingsA ON Job.BuildingA = buildingsA.BuildingID
+                        JOIN Building AS buildingsB ON Job.BuildingB = buildingsB.BuildingID
+                        JOIN Customer ON Job.CustomerID = Customer.idCustomer
+                        WHERE Job.idJob = {jobId}";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 MySqlDataReader reader = command.ExecuteReader();
-
                 if (reader.Read())
                 {
                     CustomerName.Text = reader["CustomerFullName"].ToString();
@@ -301,9 +389,9 @@ namespace Movers_Scheduling_Program
                     BuildingBType.Text = reader["BuildingBType"].ToString();
                     BuildingBRooms.Text = reader["BuildingBRooms"].ToString() + " rooms";
                     BuildingBPostcode.Text = reader["BuildingBPostcode"].ToString();
-                    DateStarting.Text = reader["TimeInstance"].ToLongDateString();
+                    DateStarting.Text = reader["TimeInstance"].ToString();
                     Fragiles.Text = Convert.ToBoolean(reader["Fragiles"]) ? "Fragiles" : "None";
-                    JobNotes.Text = reader["JobNotes"].ToString();
+                    JobNotes.Text = string.IsNullOrEmpty(reader["JobNotes"].ToString()) ? "None" : reader["JobNotes"].ToString();
                     NoOfBoxes.Text = reader["NoOfBoxes"].ToString() + " Boxes";
                     BuildingAPacking.Text = Convert.ToBoolean(reader["Packed"]) ? "Packed" : "Not Packed";
                     BuildingADissasembly.Text = Convert.ToBoolean(reader["Disassembly"]) ? "Disassembly" : "No Disassembly";
@@ -311,41 +399,67 @@ namespace Movers_Scheduling_Program
                     NoOfDays.Text = reader["NoOfDays"].ToString() + " Days";
                 }
                 reader.Close();
-
-                // Retrieve all time instances for the job
-                string timeInstancesQuery = $@"
-                    SELECT DATE_FORMAT(DayOccurance, '%Y-%m-%d') AS DateOnly
-                    FROM JobTimeInstance
-                    WHERE JobID = {jobId}";
-
-                MySqlCommand timeInstancesCommand = new MySqlCommand(timeInstancesQuery, connection);
-                MySqlDataReader timeInstancesReader = timeInstancesCommand.ExecuteReader();
-
-                StringBuilder timeInstancesBuilder = new StringBuilder();
-                while (timeInstancesReader.Read())
-                {
-                    timeInstancesBuilder.AppendLine(timeInstancesReader["DateOnly"].ToString());
-                }
-                TimeInstances.Text = timeInstancesBuilder.ToString();
-                timeInstancesReader.Close();
-
-                // Retrieve all staff names and roles associated with the job
-                string staffQuery = $@"
-                    SELECT CONCAT(Staff.FirstName, ' ', Staff.SecondName) AS StaffFullName, Staff.Role
-                    FROM StaffAssign
-                    JOIN Staff ON StaffAssign.StaffUsername = Staff.Username
-                    WHERE StaffAssign.JobID = {jobId}";
-
-                MySqlCommand staffCommand = new MySqlCommand(staffQuery, connection);
-                MySqlDataReader staffReader = staffCommand.ExecuteReader();
-
-                StringBuilder staffBuilder = new StringBuilder();
-                while (staffReader.Read())
-                {
-                    staffBuilder.AppendLine($"{staffReader["StaffFullName"]} - {staffReader["Role"]}");
-                }
-                AssignedEmployees.Text = staffBuilder.ToString();
+                LoadTimeInstances(jobId);
+                LoadAssignedStaff(jobId);
             }
         }
+
+        private void LoadTimeInstances(int jobId)
+        {
+            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $@"
+                        SELECT DATE_FORMAT(DayOccurance, '%Y-%m-%d') AS DateOnly
+                        FROM JobTimeInstance
+                        WHERE JobID = {jobId}";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                StringBuilder builder = new StringBuilder();
+                while (reader.Read())
+                {
+                    builder.AppendLine(reader["DateOnly"].ToString());
+                }
+                TimeInstances.Text = builder.ToString();
+                reader.Close();
+            }
+        }
+
+        private void LoadAssignedStaff(int jobId)
+        {
+            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $@"
+                        SELECT CONCAT(Staff.FirstName, ' ', Staff.SecondName) AS StaffFullName, Staff.Role, Staff.Username
+                        FROM StaffAssign
+                        JOIN Staff ON StaffAssign.StaffUsername = Staff.Username
+                        WHERE StaffAssign.JobID = {jobId}";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                DataTable table = new DataTable();
+                table.Load(reader);
+                if (!AssignedEmployees.Columns.Contains("ProfileButton"))
+                {
+                    DataGridViewButtonColumn profileButtonColumn = new DataGridViewButtonColumn
+                    {
+                        Name = "ProfileButton",
+                        HeaderText = "Profile",
+                        Text = "View Profile",
+                        UseColumnTextForButtonValue = true
+                    };
+                    AssignedEmployees.Columns.Add(profileButtonColumn);
+                }
+                AssignedEmployees.DataSource = table;
+                AssignedEmployees.BackgroundColor = Color.White;
+                AssignedEmployees.RowTemplate.Height = 40;
+                AssignedEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                AssignedEmployees.Columns["ProfileButton"].DisplayIndex = AssignedEmployees.Columns.Count - 1;
+            }
+        }
+
+        private void Username_Click(object sender, EventArgs e) { }
     }
 }

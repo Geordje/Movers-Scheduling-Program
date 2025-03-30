@@ -55,6 +55,7 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\..\..\For Stuff That doesnt Work\BunifuCrack-main (1)\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
@@ -63,6 +64,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
       <HintPath>..\..\..\..\..\..\For Stuff That doesnt Work\BunifuCrack-main (1)\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\..\..\For Stuff That doesnt Work\BunifuCrack-main (1)\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
       <HintPath>..\..\..\..\..\..\For Stuff That doesnt Work\BunifuCrack-main (1)\BunifuCrack-main\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
