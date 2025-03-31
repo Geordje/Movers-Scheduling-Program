@@ -25,7 +25,7 @@ namespace Movers_Scheduling_Program
             Role = role;
         }
 
-        public static void ClearSession()
+        public static void LogOut()
         {
             Username = null;
             FirstName = null;

@@ -33,8 +33,8 @@ namespace Movers_Scheduling_Program
             InitializeCloudinary();
             SetWelcomeMessage();
             LoadProfilePicture();
-            InitializeVariables();
             AttachEventHandlers();
+            SetCancelButtonVisibility();
         }
 
         private void InitializeCloudinary()
@@ -67,16 +67,11 @@ namespace Movers_Scheduling_Program
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading image: {ex.Message}");
+                //MessageBox.Show("No Profile picture Found");
             }
         }
 
-        private void InitializeVariables()
-        {
-            isNext = true;
-            timeValue = 4;
-            timeUnit = "days";
-        }
+
 
         private void AttachEventHandlers()
         {
@@ -84,13 +79,17 @@ namespace Movers_Scheduling_Program
             AssignedEmployees.CellContentClick += AssignedEmployees_CellContentClick;
         }
 
-        private void SetProfilePicture(Cloudinary cloudinary)
+        private void SetCancelButtonVisibility()
         {
-            string imageUrl = cloudinary.Api.UrlImgUp.BuildUrl("profilepictures/" + SessionManager.Username + ".jpg");
-            bunifuButton8.IdleIconLeftImage = Image.FromStream(new System.Net.WebClient().OpenRead(imageUrl));
+            if (SessionManager.Role.ToLower() == "manager" || SessionManager.Role.ToLower() == "it admin")
+            {
+                CancelButton.Visible = true;
+            }
+            else
+            {
+                CancelButton.Visible = false;
+            }
         }
-
-        private void rjButton1_Click(object sender, EventArgs e) { }
 
         private void AssignedEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -99,44 +98,10 @@ namespace Movers_Scheduling_Program
                 var cellValue = AssignedEmployees.Rows[e.RowIndex].Cells["Username"].Value;
                 string username = cellValue.ToString();
                 DisplayProfile(username);
-                
-               
             }
         }
 
-        private void LoadEmployees()
-        {
-            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = @"
-                    SELECT Username, 
-                           CONCAT(FirstName, ' ', SecondName) AS FullName, 
-                           Role 
-                    FROM Staff";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                if (!AssignedEmployees.Columns.Contains("ProfileButton"))
-                {
-                    DataGridViewButtonColumn profileButtonColumn = new DataGridViewButtonColumn
-                    {
-                        Name = "ProfileButton",
-                        HeaderText = "Profile",
-                        Text = "View Profile",
-                        UseColumnTextForButtonValue = true
-                    };
-                    AssignedEmployees.Columns.Add(profileButtonColumn);
-                }
-                AssignedEmployees.DataSource = dataTable;
-                AssignedEmployees.BackgroundColor = Color.White;
-                AssignedEmployees.RowTemplate.Height = 40;
-                AssignedEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                AssignedEmployees.Columns["ProfileButton"].DisplayIndex = AssignedEmployees.Columns.Count - 1;
-            }
-        }
-
+       
         private void DisplayProfile(string username)
         {
             SessionManager.Username = username;
@@ -261,7 +226,6 @@ namespace Movers_Scheduling_Program
                 }
                 catch (Exception e)
                 {
-
                 }
             }
         }
@@ -324,7 +288,7 @@ namespace Movers_Scheduling_Program
 
         private void bunifuButton8_Click(object sender, EventArgs e)
         {
-            Page.SetPage(prof);
+            DisplayProfile(SessionManager.Username);
             pageName.Text = "My Profile";
         }
 
@@ -367,7 +331,9 @@ namespace Movers_Scheduling_Program
                                Job.Packed,
                                Job.Disassembly,
                                Job.Reassembly,
-                               (SELECT COUNT(*) FROM JobTimeInstance WHERE JobTimeInstance.JobID = Job.idJob) AS NoOfDays
+                               (SELECT COUNT(*) FROM JobTimeInstance WHERE JobTimeInstance.JobID = Job.idJob) AS NoOfDays,
+                               Job.Price,
+                               Job.ConfirmedPrice
                         FROM Job
                         JOIN JobTimeInstance ON Job.idJob = JobTimeInstance.JobID
                         JOIN Building AS buildingsA ON Job.BuildingA = buildingsA.BuildingID
@@ -397,6 +363,8 @@ namespace Movers_Scheduling_Program
                     BuildingADissasembly.Text = Convert.ToBoolean(reader["Disassembly"]) ? "Disassembly" : "No Disassembly";
                     BuildingBReassembly.Text = Convert.ToBoolean(reader["Reassembly"]) ? "Reassembly" : "No Reassembly";
                     NoOfDays.Text = reader["NoOfDays"].ToString() + " Days";
+                    Price.Text = $"Price: {reader["Price"].ToString()}";
+                    ConfirmedNotConfirmed.Text = Convert.ToBoolean(reader["ConfirmedPrice"]) ? "Confirmed Price" : "Price Not Confirmed";
                 }
                 reader.Close();
                 LoadTimeInstances(jobId);
@@ -461,5 +429,46 @@ namespace Movers_Scheduling_Program
         }
 
         private void Username_Click(object sender, EventArgs e) { }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to cancel this job?", "Confirm Cancellation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                CancelJob(selectedJobId);
+            }
+        }
+        private void CancelJob(int jobId)
+        {
+            string connectionString = "Server=bf0aazuktscfjlzc79lq-mysql.services.clever-cloud.com;Database=bf0aazuktscfjlzc79lq;User Id=uwxdwzdrkyehbgba;Password=sKTDtXyMidMIIfXhi8yl;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string deleteJobQuery = "DELETE FROM Job WHERE idJob = @JobId";
+                string deleteJobTimeInstanceQuery = "DELETE FROM JobTimeInstance WHERE JobID = @JobId";
+                string deleteStaffAssignQuery = "DELETE FROM StaffAssign WHERE JobID = @JobId";
+
+                
+
+                using (MySqlCommand command = new MySqlCommand(deleteJobTimeInstanceQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@JobId", jobId);
+                    command.ExecuteNonQuery();
+                }
+
+                using (MySqlCommand command = new MySqlCommand(deleteStaffAssignQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@JobId", jobId);
+                    command.ExecuteNonQuery();
+                }
+                using (MySqlCommand command = new MySqlCommand(deleteJobQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@JobId", jobId);
+                    command.ExecuteNonQuery();
+                }
+                Page.SetPage(Recemts);
+                pageName.Text = "Recents";
+            }
+        }
     }
 }

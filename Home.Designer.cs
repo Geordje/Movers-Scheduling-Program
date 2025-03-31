@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -41,19 +42,14 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
-            this.bunifuButton8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pageName = new System.Windows.Forms.Label();
             this.Page = new Bunifu.UI.WinForms.BunifuPages();
             this.Recemts = new System.Windows.Forms.TabPage();
             this.unit = new System.Windows.Forms.ComboBox();
             this.amount = new System.Windows.Forms.NumericUpDown();
             this.tense = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.Availability = new System.Windows.Forms.TabPage();
@@ -66,16 +62,24 @@
             this.Details = new System.Windows.Forms.TabPage();
             this.Advanced = new System.Windows.Forms.TabPage();
             this.prof = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.AccessLevel = new System.Windows.Forms.Label();
+            this.Role = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
+            this.Username = new System.Windows.Forms.Label();
+            this.FullName = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.JobInfo = new System.Windows.Forms.TabPage();
+            this.AssignedEmployees = new System.Windows.Forms.DataGridView();
             this.TimeInstances = new System.Windows.Forms.Label();
             this.JobNotes = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.NoOfDays = new System.Windows.Forms.Label();
             this.NoOfBoxes = new System.Windows.Forms.Label();
             this.Fragiles = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.CustomerPhoneNumber = new System.Windows.Forms.Label();
             this.CustomerEmail = new System.Windows.Forms.Label();
             this.CustomerName = new System.Windows.Forms.Label();
@@ -85,21 +89,41 @@
             this.BuildingBPostcode = new System.Windows.Forms.Label();
             this.BuildingBReassembly = new System.Windows.Forms.Label();
             this.BuildingBRooms = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.BuildingBAddress = new System.Windows.Forms.Label();
             this.BuildingBType = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuildingAPacking = new System.Windows.Forms.Label();
             this.BuildingADissasembly = new System.Windows.Forms.Label();
             this.BuildingARooms = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.BuildingAAddress = new System.Windows.Forms.Label();
             this.BuildingABuildingType = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Price = new System.Windows.Forms.Label();
+            this.ConfirmedNotConfirmed = new System.Windows.Forms.Label();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.rjButton4 = new CustomControls.RJControls.RJButton();
+            this.rjButton3 = new CustomControls.RJControls.RJButton();
+            this.CancelButton = new CustomControls.RJControls.RJButton();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.rjButton5 = new CustomControls.RJControls.RJButton();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.userpfp = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuButton8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.bunifuButton7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -108,50 +132,42 @@
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.Recents = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.AssignedEmployees = new System.Windows.Forms.DataGridView();
-            this.userpfp = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.FullName = new System.Windows.Forms.Label();
-            this.Username = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.Label();
-            this.Role = new System.Windows.Forms.Label();
-            this.AccessLevel = new System.Windows.Forms.Label();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
-            this.rjButton4 = new CustomControls.RJControls.RJButton();
-            this.rjButton3 = new CustomControls.RJControls.RJButton();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FirstName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.TopBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.Page.SuspendLayout();
             this.Recemts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Employees.SuspendLayout();
             this.Date.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.prof.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.JobInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AssignedEmployees)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userpfp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AssignedEmployees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userpfp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -165,30 +181,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1904, 100);
             this.panel1.TabIndex = 2;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox9.Image = global::Movers_Scheduling_Program.Properties.Resources.truk_ezgif_com_crop__1_;
-            this.pictureBox9.Location = new System.Drawing.Point(1736, 19);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(115, 81);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 4;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox2.Image = global::Movers_Scheduling_Program.Properties.Resources.truk_ezgif_com_crop__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(2588, 19);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(115, 81);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
             // 
             // Title
             // 
@@ -213,6 +205,1009 @@
             this.TopBar.Name = "TopBar";
             this.TopBar.Size = new System.Drawing.Size(1554, 100);
             this.TopBar.TabIndex = 3;
+            // 
+            // pageName
+            // 
+            this.pageName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pageName.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pageName.Location = new System.Drawing.Point(0, 0);
+            this.pageName.Name = "pageName";
+            this.pageName.Padding = new System.Windows.Forms.Padding(10);
+            this.pageName.Size = new System.Drawing.Size(1552, 98);
+            this.pageName.TabIndex = 0;
+            this.pageName.Text = "Recents";
+            this.pageName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Page
+            // 
+            this.Page.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.Page.AllowTransitions = true;
+            this.Page.Controls.Add(this.Recemts);
+            this.Page.Controls.Add(this.Availability);
+            this.Page.Controls.Add(this.Employees);
+            this.Page.Controls.Add(this.Customers);
+            this.Page.Controls.Add(this.Date);
+            this.Page.Controls.Add(this.Customer);
+            this.Page.Controls.Add(this.Details);
+            this.Page.Controls.Add(this.Advanced);
+            this.Page.Controls.Add(this.prof);
+            this.Page.Controls.Add(this.tabPage1);
+            this.Page.Controls.Add(this.JobInfo);
+            this.Page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Page.Location = new System.Drawing.Point(350, 200);
+            this.Page.Multiline = true;
+            this.Page.Name = "Page";
+            this.Page.Page = this.Employees;
+            this.Page.PageIndex = 2;
+            this.Page.PageName = "Employees";
+            this.Page.PageTitle = "Employees";
+            this.Page.SelectedIndex = 0;
+            this.Page.Size = new System.Drawing.Size(1554, 841);
+            this.Page.TabIndex = 5;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.Page.Transition = animation1;
+            this.Page.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Leaf;
+            // 
+            // Recemts
+            // 
+            this.Recemts.Controls.Add(this.rjButton2);
+            this.Recemts.Controls.Add(this.unit);
+            this.Recemts.Controls.Add(this.amount);
+            this.Recemts.Controls.Add(this.tense);
+            this.Recemts.Controls.Add(this.pictureBox4);
+            this.Recemts.Controls.Add(this.dataGridView1);
+            this.Recemts.Controls.Add(this.label1);
+            this.Recemts.Location = new System.Drawing.Point(4, 4);
+            this.Recemts.Name = "Recemts";
+            this.Recemts.Padding = new System.Windows.Forms.Padding(3);
+            this.Recemts.Size = new System.Drawing.Size(1546, 815);
+            this.Recemts.TabIndex = 0;
+            this.Recemts.Text = "Recents";
+            this.Recemts.UseVisualStyleBackColor = true;
+            // 
+            // unit
+            // 
+            this.unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unit.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit.FormattingEnabled = true;
+            this.unit.Items.AddRange(new object[] {
+            "Hours",
+            "Days",
+            "Weeks",
+            "Months"});
+            this.unit.Location = new System.Drawing.Point(899, 141);
+            this.unit.Name = "unit";
+            this.unit.Size = new System.Drawing.Size(193, 58);
+            this.unit.TabIndex = 6;
+            // 
+            // amount
+            // 
+            this.amount.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold);
+            this.amount.Location = new System.Drawing.Point(680, 142);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(187, 57);
+            this.amount.TabIndex = 5;
+            // 
+            // tense
+            // 
+            this.tense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tense.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tense.FormattingEnabled = true;
+            this.tense.Items.AddRange(new object[] {
+            "Next",
+            "Previous"});
+            this.tense.Location = new System.Drawing.Point(453, 142);
+            this.tense.Name = "tense";
+            this.tense.Size = new System.Drawing.Size(193, 58);
+            this.tense.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 205);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.Size = new System.Drawing.Size(1480, 610);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(537, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome back, UsernameHere";
+            // 
+            // Availability
+            // 
+            this.Availability.Location = new System.Drawing.Point(4, 4);
+            this.Availability.Name = "Availability";
+            this.Availability.Padding = new System.Windows.Forms.Padding(3);
+            this.Availability.Size = new System.Drawing.Size(1546, 815);
+            this.Availability.TabIndex = 1;
+            this.Availability.Text = "Availabilty";
+            this.Availability.UseVisualStyleBackColor = true;
+            // 
+            // Employees
+            // 
+            this.Employees.Controls.Add(this.FirstName);
+            this.Employees.Controls.Add(this.rjButton5);
+            this.Employees.Controls.Add(this.pictureBox12);
+            this.Employees.Controls.Add(this.dataGridView4);
+            this.Employees.Controls.Add(this.label13);
+            this.Employees.Location = new System.Drawing.Point(4, 4);
+            this.Employees.Name = "Employees";
+            this.Employees.Padding = new System.Windows.Forms.Padding(3);
+            this.Employees.Size = new System.Drawing.Size(1546, 815);
+            this.Employees.TabIndex = 2;
+            this.Employees.Text = "Employees";
+            this.Employees.UseVisualStyleBackColor = true;
+            // 
+            // Customers
+            // 
+            this.Customers.Location = new System.Drawing.Point(4, 4);
+            this.Customers.Name = "Customers";
+            this.Customers.Padding = new System.Windows.Forms.Padding(3);
+            this.Customers.Size = new System.Drawing.Size(1546, 815);
+            this.Customers.TabIndex = 3;
+            this.Customers.Text = "Customers";
+            this.Customers.UseVisualStyleBackColor = true;
+            // 
+            // Date
+            // 
+            this.Date.Controls.Add(this.rjButton4);
+            this.Date.Controls.Add(this.rjButton3);
+            this.Date.Controls.Add(this.monthCalendar1);
+            this.Date.Controls.Add(this.dataGridView2);
+            this.Date.Location = new System.Drawing.Point(4, 4);
+            this.Date.Name = "Date";
+            this.Date.Padding = new System.Windows.Forms.Padding(3);
+            this.Date.Size = new System.Drawing.Size(1546, 815);
+            this.Date.TabIndex = 4;
+            this.Date.Text = "Date";
+            this.Date.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 3);
+            this.monthCalendar1.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold);
+            this.monthCalendar1.Location = new System.Drawing.Point(1061, 122);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(39, 59);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(992, 756);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // Customer
+            // 
+            this.Customer.Location = new System.Drawing.Point(4, 4);
+            this.Customer.Name = "Customer";
+            this.Customer.Padding = new System.Windows.Forms.Padding(3);
+            this.Customer.Size = new System.Drawing.Size(1546, 815);
+            this.Customer.TabIndex = 5;
+            this.Customer.Text = "Customer";
+            this.Customer.UseVisualStyleBackColor = true;
+            // 
+            // Details
+            // 
+            this.Details.Location = new System.Drawing.Point(4, 4);
+            this.Details.Name = "Details";
+            this.Details.Padding = new System.Windows.Forms.Padding(3);
+            this.Details.Size = new System.Drawing.Size(1546, 815);
+            this.Details.TabIndex = 6;
+            this.Details.Text = "Details";
+            this.Details.UseVisualStyleBackColor = true;
+            // 
+            // Advanced
+            // 
+            this.Advanced.Location = new System.Drawing.Point(4, 4);
+            this.Advanced.Name = "Advanced";
+            this.Advanced.Padding = new System.Windows.Forms.Padding(3);
+            this.Advanced.Size = new System.Drawing.Size(1546, 815);
+            this.Advanced.TabIndex = 7;
+            this.Advanced.Text = "Advanced";
+            this.Advanced.UseVisualStyleBackColor = true;
+            // 
+            // prof
+            // 
+            this.prof.Controls.Add(this.label11);
+            this.prof.Controls.Add(this.label10);
+            this.prof.Controls.Add(this.label9);
+            this.prof.Controls.Add(this.label8);
+            this.prof.Controls.Add(this.label7);
+            this.prof.Controls.Add(this.dataGridView3);
+            this.prof.Controls.Add(this.AccessLevel);
+            this.prof.Controls.Add(this.Role);
+            this.prof.Controls.Add(this.Email);
+            this.prof.Controls.Add(this.Username);
+            this.prof.Controls.Add(this.FullName);
+            this.prof.Controls.Add(this.userpfp);
+            this.prof.Location = new System.Drawing.Point(4, 4);
+            this.prof.Name = "prof";
+            this.prof.Padding = new System.Windows.Forms.Padding(3);
+            this.prof.Size = new System.Drawing.Size(1546, 815);
+            this.prof.TabIndex = 8;
+            this.prof.Text = "Profile";
+            this.prof.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(409, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 25);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Full Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(409, 150);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 25);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Username";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(61, 429);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(1025, 350);
+            this.dataGridView3.TabIndex = 6;
+            // 
+            // AccessLevel
+            // 
+            this.AccessLevel.AutoSize = true;
+            this.AccessLevel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.AccessLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AccessLevel.Location = new System.Drawing.Point(981, 296);
+            this.AccessLevel.Name = "AccessLevel";
+            this.AccessLevel.Size = new System.Drawing.Size(96, 37);
+            this.AccessLevel.TabIndex = 5;
+            this.AccessLevel.Text = "label7";
+            // 
+            // Role
+            // 
+            this.Role.AutoSize = true;
+            this.Role.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Role.Location = new System.Drawing.Point(981, 188);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(96, 37);
+            this.Role.TabIndex = 4;
+            this.Role.Text = "label7";
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Email.Location = new System.Drawing.Point(981, 80);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(96, 37);
+            this.Email.TabIndex = 3;
+            this.Email.Text = "label7";
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+            this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Username.Location = new System.Drawing.Point(405, 175);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(137, 54);
+            this.Username.TabIndex = 2;
+            this.Username.Text = "label7";
+            this.Username.Click += new System.EventHandler(this.Username_Click);
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSize = true;
+            this.FullName.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+            this.FullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FullName.Location = new System.Drawing.Point(405, 67);
+            this.FullName.Name = "FullName";
+            this.FullName.Size = new System.Drawing.Size(137, 54);
+            this.FullName.TabIndex = 1;
+            this.FullName.Text = "label7";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1546, 815);
+            this.tabPage1.TabIndex = 9;
+            this.tabPage1.Text = "Default";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1540, 809);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Select a menu from sidebar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // JobInfo
+            // 
+            this.JobInfo.Controls.Add(this.ConfirmedNotConfirmed);
+            this.JobInfo.Controls.Add(this.CancelButton);
+            this.JobInfo.Controls.Add(this.Price);
+            this.JobInfo.Controls.Add(this.label12);
+            this.JobInfo.Controls.Add(this.AssignedEmployees);
+            this.JobInfo.Controls.Add(this.TimeInstances);
+            this.JobInfo.Controls.Add(this.JobNotes);
+            this.JobInfo.Controls.Add(this.label4);
+            this.JobInfo.Controls.Add(this.NoOfDays);
+            this.JobInfo.Controls.Add(this.NoOfBoxes);
+            this.JobInfo.Controls.Add(this.Fragiles);
+            this.JobInfo.Controls.Add(this.CustomerPhoneNumber);
+            this.JobInfo.Controls.Add(this.CustomerEmail);
+            this.JobInfo.Controls.Add(this.CustomerName);
+            this.JobInfo.Controls.Add(this.label6);
+            this.JobInfo.Controls.Add(this.DateStarting);
+            this.JobInfo.Controls.Add(this.label5);
+            this.JobInfo.Controls.Add(this.BuildingBPostcode);
+            this.JobInfo.Controls.Add(this.BuildingBReassembly);
+            this.JobInfo.Controls.Add(this.BuildingBRooms);
+            this.JobInfo.Controls.Add(this.BuildingBAddress);
+            this.JobInfo.Controls.Add(this.BuildingBType);
+            this.JobInfo.Controls.Add(this.label3);
+            this.JobInfo.Controls.Add(this.BuildingAPacking);
+            this.JobInfo.Controls.Add(this.BuildingADissasembly);
+            this.JobInfo.Controls.Add(this.BuildingARooms);
+            this.JobInfo.Controls.Add(this.BuildingAAddress);
+            this.JobInfo.Controls.Add(this.BuildingABuildingType);
+            this.JobInfo.Controls.Add(this.pictureBox11);
+            this.JobInfo.Controls.Add(this.pictureBox10);
+            this.JobInfo.Controls.Add(this.pictureBox7);
+            this.JobInfo.Controls.Add(this.pictureBox6);
+            this.JobInfo.Controls.Add(this.pictureBox5);
+            this.JobInfo.Location = new System.Drawing.Point(4, 4);
+            this.JobInfo.Name = "JobInfo";
+            this.JobInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.JobInfo.Size = new System.Drawing.Size(1546, 815);
+            this.JobInfo.TabIndex = 10;
+            this.JobInfo.Text = "JobInfo";
+            this.JobInfo.UseVisualStyleBackColor = true;
+            // 
+            // AssignedEmployees
+            // 
+            this.AssignedEmployees.AllowUserToAddRows = false;
+            this.AssignedEmployees.AllowUserToDeleteRows = false;
+            this.AssignedEmployees.AllowUserToOrderColumns = true;
+            this.AssignedEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AssignedEmployees.Location = new System.Drawing.Point(55, 537);
+            this.AssignedEmployees.Name = "AssignedEmployees";
+            this.AssignedEmployees.ReadOnly = true;
+            this.AssignedEmployees.Size = new System.Drawing.Size(551, 257);
+            this.AssignedEmployees.TabIndex = 31;
+            // 
+            // TimeInstances
+            // 
+            this.TimeInstances.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic);
+            this.TimeInstances.Location = new System.Drawing.Point(626, 444);
+            this.TimeInstances.Name = "TimeInstances";
+            this.TimeInstances.Size = new System.Drawing.Size(294, 350);
+            this.TimeInstances.TabIndex = 30;
+            this.TimeInstances.Text = "label7";
+            this.TimeInstances.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // JobNotes
+            // 
+            this.JobNotes.AutoSize = true;
+            this.JobNotes.Location = new System.Drawing.Point(679, 62);
+            this.JobNotes.Name = "JobNotes";
+            this.JobNotes.Size = new System.Drawing.Size(35, 13);
+            this.JobNotes.TabIndex = 29;
+            this.JobNotes.Text = "label7";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(675, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(234, 37);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Job Specific Notes";
+            // 
+            // NoOfDays
+            // 
+            this.NoOfDays.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoOfDays.Location = new System.Drawing.Point(626, 384);
+            this.NoOfDays.Name = "NoOfDays";
+            this.NoOfDays.Size = new System.Drawing.Size(294, 47);
+            this.NoOfDays.TabIndex = 27;
+            this.NoOfDays.Text = "label3";
+            this.NoOfDays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NoOfBoxes
+            // 
+            this.NoOfBoxes.AutoSize = true;
+            this.NoOfBoxes.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoOfBoxes.Location = new System.Drawing.Point(795, 312);
+            this.NoOfBoxes.Name = "NoOfBoxes";
+            this.NoOfBoxes.Size = new System.Drawing.Size(70, 30);
+            this.NoOfBoxes.TabIndex = 26;
+            this.NoOfBoxes.Text = "label4";
+            // 
+            // Fragiles
+            // 
+            this.Fragiles.AutoSize = true;
+            this.Fragiles.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fragiles.Location = new System.Drawing.Point(677, 312);
+            this.Fragiles.Name = "Fragiles";
+            this.Fragiles.Size = new System.Drawing.Size(70, 30);
+            this.Fragiles.TabIndex = 25;
+            this.Fragiles.Text = "label4";
+            // 
+            // CustomerPhoneNumber
+            // 
+            this.CustomerPhoneNumber.AutoSize = true;
+            this.CustomerPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic);
+            this.CustomerPhoneNumber.Location = new System.Drawing.Point(74, 252);
+            this.CustomerPhoneNumber.Name = "CustomerPhoneNumber";
+            this.CustomerPhoneNumber.Size = new System.Drawing.Size(89, 37);
+            this.CustomerPhoneNumber.TabIndex = 23;
+            this.CustomerPhoneNumber.Text = "label7";
+            // 
+            // CustomerEmail
+            // 
+            this.CustomerEmail.AutoSize = true;
+            this.CustomerEmail.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic);
+            this.CustomerEmail.Location = new System.Drawing.Point(74, 215);
+            this.CustomerEmail.Name = "CustomerEmail";
+            this.CustomerEmail.Size = new System.Drawing.Size(89, 37);
+            this.CustomerEmail.TabIndex = 22;
+            this.CustomerEmail.Text = "label7";
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.AutoSize = true;
+            this.CustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerName.Location = new System.Drawing.Point(68, 168);
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.Size = new System.Drawing.Size(124, 50);
+            this.CustomerName.TabIndex = 21;
+            this.CustomerName.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 22.25F, System.Drawing.FontStyle.Italic);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(62, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 41);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Customer";
+            // 
+            // DateStarting
+            // 
+            this.DateStarting.AutoSize = true;
+            this.DateStarting.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateStarting.Location = new System.Drawing.Point(68, 60);
+            this.DateStarting.Name = "DateStarting";
+            this.DateStarting.Size = new System.Drawing.Size(137, 54);
+            this.DateStarting.TabIndex = 19;
+            this.DateStarting.Text = "label6";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(62, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 37);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Starting";
+            // 
+            // BuildingBPostcode
+            // 
+            this.BuildingBPostcode.Font = new System.Drawing.Font("Segoe UI Semilight", 22.75F, System.Drawing.FontStyle.Italic);
+            this.BuildingBPostcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BuildingBPostcode.Location = new System.Drawing.Point(1241, 322);
+            this.BuildingBPostcode.Name = "BuildingBPostcode";
+            this.BuildingBPostcode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BuildingBPostcode.Size = new System.Drawing.Size(264, 60);
+            this.BuildingBPostcode.TabIndex = 17;
+            this.BuildingBPostcode.Text = "label4";
+            // 
+            // BuildingBReassembly
+            // 
+            this.BuildingBReassembly.AutoSize = true;
+            this.BuildingBReassembly.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingBReassembly.Location = new System.Drawing.Point(1151, 453);
+            this.BuildingBReassembly.Name = "BuildingBReassembly";
+            this.BuildingBReassembly.Size = new System.Drawing.Size(70, 30);
+            this.BuildingBReassembly.TabIndex = 15;
+            this.BuildingBReassembly.Text = "label4";
+            // 
+            // BuildingBRooms
+            // 
+            this.BuildingBRooms.AutoSize = true;
+            this.BuildingBRooms.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingBRooms.Location = new System.Drawing.Point(1004, 453);
+            this.BuildingBRooms.Name = "BuildingBRooms";
+            this.BuildingBRooms.Size = new System.Drawing.Size(70, 30);
+            this.BuildingBRooms.TabIndex = 14;
+            this.BuildingBRooms.Text = "label4";
+            // 
+            // BuildingBAddress
+            // 
+            this.BuildingBAddress.AutoSize = true;
+            this.BuildingBAddress.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingBAddress.Location = new System.Drawing.Point(968, 382);
+            this.BuildingBAddress.Name = "BuildingBAddress";
+            this.BuildingBAddress.Size = new System.Drawing.Size(120, 47);
+            this.BuildingBAddress.TabIndex = 12;
+            this.BuildingBAddress.Text = "label3";
+            // 
+            // BuildingBType
+            // 
+            this.BuildingBType.AutoSize = true;
+            this.BuildingBType.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingBType.Location = new System.Drawing.Point(971, 350);
+            this.BuildingBType.Name = "BuildingBType";
+            this.BuildingBType.Size = new System.Drawing.Size(73, 32);
+            this.BuildingBType.TabIndex = 11;
+            this.BuildingBType.Text = "label3";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 22.75F, System.Drawing.FontStyle.Italic);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(338, 322);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(264, 60);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
+            // BuildingAPacking
+            // 
+            this.BuildingAPacking.AutoSize = true;
+            this.BuildingAPacking.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingAPacking.Location = new System.Drawing.Point(467, 453);
+            this.BuildingAPacking.Name = "BuildingAPacking";
+            this.BuildingAPacking.Size = new System.Drawing.Size(70, 30);
+            this.BuildingAPacking.TabIndex = 9;
+            this.BuildingAPacking.Text = "label4";
+            // 
+            // BuildingADissasembly
+            // 
+            this.BuildingADissasembly.AutoSize = true;
+            this.BuildingADissasembly.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingADissasembly.Location = new System.Drawing.Point(252, 453);
+            this.BuildingADissasembly.Name = "BuildingADissasembly";
+            this.BuildingADissasembly.Size = new System.Drawing.Size(70, 30);
+            this.BuildingADissasembly.TabIndex = 8;
+            this.BuildingADissasembly.Text = "label4";
+            // 
+            // BuildingARooms
+            // 
+            this.BuildingARooms.AutoSize = true;
+            this.BuildingARooms.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingARooms.Location = new System.Drawing.Point(105, 453);
+            this.BuildingARooms.Name = "BuildingARooms";
+            this.BuildingARooms.Size = new System.Drawing.Size(70, 30);
+            this.BuildingARooms.TabIndex = 7;
+            this.BuildingARooms.Text = "label4";
+            // 
+            // BuildingAAddress
+            // 
+            this.BuildingAAddress.AutoSize = true;
+            this.BuildingAAddress.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingAAddress.Location = new System.Drawing.Point(69, 382);
+            this.BuildingAAddress.Name = "BuildingAAddress";
+            this.BuildingAAddress.Size = new System.Drawing.Size(120, 47);
+            this.BuildingAAddress.TabIndex = 4;
+            this.BuildingAAddress.Text = "label3";
+            // 
+            // BuildingABuildingType
+            // 
+            this.BuildingABuildingType.AutoSize = true;
+            this.BuildingABuildingType.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuildingABuildingType.Location = new System.Drawing.Point(72, 350);
+            this.BuildingABuildingType.Name = "BuildingABuildingType";
+            this.BuildingABuildingType.Size = new System.Drawing.Size(73, 32);
+            this.BuildingABuildingType.TabIndex = 3;
+            this.BuildingABuildingType.Text = "label3";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(20);
+            this.panel3.Size = new System.Drawing.Size(350, 100);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.bunifuButton7);
+            this.panel2.Controls.Add(this.bunifuButton6);
+            this.panel2.Controls.Add(this.bunifuButton5);
+            this.panel2.Controls.Add(this.bunifuButton4);
+            this.panel2.Controls.Add(this.bunifuButton3);
+            this.panel2.Controls.Add(this.bunifuButton2);
+            this.panel2.Controls.Add(this.bunifuButton1);
+            this.panel2.Controls.Add(this.Recents);
+            this.panel2.Controls.Add(this.rjButton1);
+            this.panel2.Controls.Add(this.bunifuLabel1);
+            this.panel2.Controls.Add(this.bunifuSeparator1);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(350, 941);
+            this.panel2.TabIndex = 4;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.CursorType = null;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuLabel1.Location = new System.Drawing.Point(20, 652);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(161, 37);
+            this.bunifuLabel1.TabIndex = 5;
+            this.bunifuLabel1.Text = "Filter Jobs By";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(983, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 25);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Email";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(983, 163);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 25);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Role";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(983, 271);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 25);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Access";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(954, 528);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 32);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Price";
+            // 
+            // Price
+            // 
+            this.Price.AutoSize = true;
+            this.Price.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Price.Location = new System.Drawing.Point(945, 560);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(365, 86);
+            this.Price.TabIndex = 33;
+            this.Price.Text = "£123456.78";
+            // 
+            // ConfirmedNotConfirmed
+            // 
+            this.ConfirmedNotConfirmed.AutoSize = true;
+            this.ConfirmedNotConfirmed.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmedNotConfirmed.Location = new System.Drawing.Point(954, 646);
+            this.ConfirmedNotConfirmed.Name = "ConfirmedNotConfirmed";
+            this.ConfirmedNotConfirmed.Size = new System.Drawing.Size(73, 32);
+            this.ConfirmedNotConfirmed.TabIndex = 34;
+            this.ConfirmedNotConfirmed.Text = "label3";
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 18;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(1319, 137);
+            this.rjButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(178, 62);
+            this.rjButton2.TabIndex = 14;
+            this.rjButton2.Text = "Show";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.White;
+            this.rjButton4.BackgroundColor = System.Drawing.Color.White;
+            this.rjButton4.BorderColor = System.Drawing.Color.Black;
+            this.rjButton4.BorderRadius = 18;
+            this.rjButton4.BorderSize = 2;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton4.ForeColor = System.Drawing.Color.Black;
+            this.rjButton4.Location = new System.Drawing.Point(1061, 580);
+            this.rjButton4.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Size = new System.Drawing.Size(458, 62);
+            this.rjButton4.TabIndex = 15;
+            this.rjButton4.Text = "Clear";
+            this.rjButton4.TextColor = System.Drawing.Color.Black;
+            this.rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton3.BorderRadius = 18;
+            this.rjButton3.BorderSize = 0;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton3.ForeColor = System.Drawing.Color.White;
+            this.rjButton3.Location = new System.Drawing.Point(1061, 494);
+            this.rjButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(458, 62);
+            this.rjButton3.TabIndex = 14;
+            this.rjButton3.Text = "Confirm";
+            this.rjButton3.TextColor = System.Drawing.Color.White;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CancelButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CancelButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.CancelButton.BorderRadius = 18;
+            this.CancelButton.BorderSize = 0;
+            this.CancelButton.FlatAppearance.BorderSize = 0;
+            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelButton.ForeColor = System.Drawing.Color.White;
+            this.CancelButton.Location = new System.Drawing.Point(960, 719);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(308, 75);
+            this.CancelButton.TabIndex = 14;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.TextColor = System.Drawing.Color.White;
+            this.CancelButton.UseVisualStyleBackColor = false;
+            this.CancelButton.Visible = false;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 18;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(15, 117);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(320, 62);
+            this.rjButton1.TabIndex = 0;
+            this.rjButton1.Text = "New Booking";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // rjButton5
+            // 
+            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.BorderRadius = 18;
+            this.rjButton5.BorderSize = 0;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton5.ForeColor = System.Drawing.Color.White;
+            this.rjButton5.Location = new System.Drawing.Point(1318, 119);
+            this.rjButton5.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(178, 62);
+            this.rjButton5.TabIndex = 18;
+            this.rjButton5.Text = "Show";
+            this.rjButton5.TextColor = System.Drawing.Color.White;
+            this.rjButton5.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridView4.Location = new System.Drawing.Point(38, 187);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView4.Size = new System.Drawing.Size(1480, 610);
+            this.dataGridView4.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(537, 50);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Welcome back, UsernameHere";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Movers_Scheduling_Program.Properties.Resources.Frame_10;
+            this.pictureBox4.Location = new System.Drawing.Point(39, 127);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1480, 81);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::Movers_Scheduling_Program.Properties.Resources.lihgli;
+            this.pictureBox12.Location = new System.Drawing.Point(38, 109);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(1480, 81);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 17;
+            this.pictureBox12.TabStop = false;
+            // 
+            // userpfp
+            // 
+            this.userpfp.AllowFocused = false;
+            this.userpfp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userpfp.AutoSizeHeight = true;
+            this.userpfp.BorderRadius = 146;
+            this.userpfp.Image = ((System.Drawing.Image)(resources.GetObject("userpfp.Image")));
+            this.userpfp.IsCircle = true;
+            this.userpfp.Location = new System.Drawing.Point(42, 42);
+            this.userpfp.Name = "userpfp";
+            this.userpfp.Size = new System.Drawing.Size(292, 292);
+            this.userpfp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userpfp.TabIndex = 0;
+            this.userpfp.TabStop = false;
+            this.userpfp.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::Movers_Scheduling_Program.Properties.Resources.Group_57;
+            this.pictureBox11.Location = new System.Drawing.Point(626, 292);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(294, 102);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 24;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::Movers_Scheduling_Program.Properties.Resources.Frame_12;
+            this.pictureBox10.Location = new System.Drawing.Point(977, 453);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(291, 51);
+            this.pictureBox10.TabIndex = 13;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Movers_Scheduling_Program.Properties.Resources.Frame_12;
+            this.pictureBox7.Location = new System.Drawing.Point(78, 453);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(491, 51);
+            this.pictureBox7.TabIndex = 5;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Movers_Scheduling_Program.Properties.Resources.Rectangle_66;
+            this.pictureBox6.Location = new System.Drawing.Point(960, 302);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(551, 204);
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Movers_Scheduling_Program.Properties.Resources.Rectangle_66;
+            this.pictureBox5.Location = new System.Drawing.Point(55, 305);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(551, 204);
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
             // 
             // bunifuButton8
             // 
@@ -313,651 +1308,6 @@
             this.pictureBox8.Size = new System.Drawing.Size(57, 80);
             this.pictureBox8.TabIndex = 5;
             this.pictureBox8.TabStop = false;
-            // 
-            // pageName
-            // 
-            this.pageName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pageName.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageName.Location = new System.Drawing.Point(0, 0);
-            this.pageName.Name = "pageName";
-            this.pageName.Padding = new System.Windows.Forms.Padding(10);
-            this.pageName.Size = new System.Drawing.Size(1552, 98);
-            this.pageName.TabIndex = 0;
-            this.pageName.Text = "Recents";
-            this.pageName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Page
-            // 
-            this.Page.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.Page.AllowTransitions = true;
-            this.Page.Controls.Add(this.Recemts);
-            this.Page.Controls.Add(this.Availability);
-            this.Page.Controls.Add(this.Employees);
-            this.Page.Controls.Add(this.Customers);
-            this.Page.Controls.Add(this.Date);
-            this.Page.Controls.Add(this.Customer);
-            this.Page.Controls.Add(this.Details);
-            this.Page.Controls.Add(this.Advanced);
-            this.Page.Controls.Add(this.prof);
-            this.Page.Controls.Add(this.tabPage1);
-            this.Page.Controls.Add(this.JobInfo);
-            this.Page.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Page.Location = new System.Drawing.Point(350, 200);
-            this.Page.Multiline = true;
-            this.Page.Name = "Page";
-            this.Page.Page = this.prof;
-            this.Page.PageIndex = 8;
-            this.Page.PageName = "prof";
-            this.Page.PageTitle = "Profile";
-            this.Page.SelectedIndex = 0;
-            this.Page.Size = new System.Drawing.Size(1554, 841);
-            this.Page.TabIndex = 5;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.Page.Transition = animation1;
-            this.Page.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Leaf;
-            // 
-            // Recemts
-            // 
-            this.Recemts.Controls.Add(this.rjButton2);
-            this.Recemts.Controls.Add(this.unit);
-            this.Recemts.Controls.Add(this.amount);
-            this.Recemts.Controls.Add(this.tense);
-            this.Recemts.Controls.Add(this.pictureBox4);
-            this.Recemts.Controls.Add(this.dataGridView1);
-            this.Recemts.Controls.Add(this.label1);
-            this.Recemts.Location = new System.Drawing.Point(4, 4);
-            this.Recemts.Name = "Recemts";
-            this.Recemts.Padding = new System.Windows.Forms.Padding(3);
-            this.Recemts.Size = new System.Drawing.Size(1546, 815);
-            this.Recemts.TabIndex = 0;
-            this.Recemts.Text = "Recents";
-            this.Recemts.UseVisualStyleBackColor = true;
-            // 
-            // unit
-            // 
-            this.unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.unit.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit.FormattingEnabled = true;
-            this.unit.Items.AddRange(new object[] {
-            "Hours",
-            "Days",
-            "Weeks",
-            "Months"});
-            this.unit.Location = new System.Drawing.Point(899, 141);
-            this.unit.Name = "unit";
-            this.unit.Size = new System.Drawing.Size(193, 58);
-            this.unit.TabIndex = 6;
-            // 
-            // amount
-            // 
-            this.amount.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold);
-            this.amount.Location = new System.Drawing.Point(680, 142);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(187, 57);
-            this.amount.TabIndex = 5;
-            // 
-            // tense
-            // 
-            this.tense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tense.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tense.FormattingEnabled = true;
-            this.tense.Items.AddRange(new object[] {
-            "Next",
-            "Previous"});
-            this.tense.Location = new System.Drawing.Point(453, 142);
-            this.tense.Name = "tense";
-            this.tense.Size = new System.Drawing.Size(193, 58);
-            this.tense.TabIndex = 3;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Movers_Scheduling_Program.Properties.Resources.Frame_10;
-            this.pictureBox4.Location = new System.Drawing.Point(39, 127);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1480, 81);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 205);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(1480, 610);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(537, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome back, UsernameHere";
-            // 
-            // Availability
-            // 
-            this.Availability.Location = new System.Drawing.Point(4, 4);
-            this.Availability.Name = "Availability";
-            this.Availability.Padding = new System.Windows.Forms.Padding(3);
-            this.Availability.Size = new System.Drawing.Size(1546, 815);
-            this.Availability.TabIndex = 1;
-            this.Availability.Text = "Availabilty";
-            this.Availability.UseVisualStyleBackColor = true;
-            // 
-            // Employees
-            // 
-            this.Employees.Location = new System.Drawing.Point(4, 4);
-            this.Employees.Name = "Employees";
-            this.Employees.Padding = new System.Windows.Forms.Padding(3);
-            this.Employees.Size = new System.Drawing.Size(1546, 815);
-            this.Employees.TabIndex = 2;
-            this.Employees.Text = "Employees";
-            this.Employees.UseVisualStyleBackColor = true;
-            // 
-            // Customers
-            // 
-            this.Customers.Location = new System.Drawing.Point(4, 4);
-            this.Customers.Name = "Customers";
-            this.Customers.Padding = new System.Windows.Forms.Padding(3);
-            this.Customers.Size = new System.Drawing.Size(1546, 815);
-            this.Customers.TabIndex = 3;
-            this.Customers.Text = "Customers";
-            this.Customers.UseVisualStyleBackColor = true;
-            // 
-            // Date
-            // 
-            this.Date.Controls.Add(this.rjButton4);
-            this.Date.Controls.Add(this.rjButton3);
-            this.Date.Controls.Add(this.monthCalendar1);
-            this.Date.Controls.Add(this.dataGridView2);
-            this.Date.Location = new System.Drawing.Point(4, 4);
-            this.Date.Name = "Date";
-            this.Date.Padding = new System.Windows.Forms.Padding(3);
-            this.Date.Size = new System.Drawing.Size(1546, 815);
-            this.Date.TabIndex = 4;
-            this.Date.Text = "Date";
-            this.Date.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 3);
-            this.monthCalendar1.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold);
-            this.monthCalendar1.Location = new System.Drawing.Point(1061, 122);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(39, 59);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(992, 756);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // Customer
-            // 
-            this.Customer.Location = new System.Drawing.Point(4, 4);
-            this.Customer.Name = "Customer";
-            this.Customer.Padding = new System.Windows.Forms.Padding(3);
-            this.Customer.Size = new System.Drawing.Size(1546, 815);
-            this.Customer.TabIndex = 5;
-            this.Customer.Text = "Customer";
-            this.Customer.UseVisualStyleBackColor = true;
-            // 
-            // Details
-            // 
-            this.Details.Location = new System.Drawing.Point(4, 4);
-            this.Details.Name = "Details";
-            this.Details.Padding = new System.Windows.Forms.Padding(3);
-            this.Details.Size = new System.Drawing.Size(1546, 815);
-            this.Details.TabIndex = 6;
-            this.Details.Text = "Details";
-            this.Details.UseVisualStyleBackColor = true;
-            // 
-            // Advanced
-            // 
-            this.Advanced.Location = new System.Drawing.Point(4, 4);
-            this.Advanced.Name = "Advanced";
-            this.Advanced.Padding = new System.Windows.Forms.Padding(3);
-            this.Advanced.Size = new System.Drawing.Size(1546, 815);
-            this.Advanced.TabIndex = 7;
-            this.Advanced.Text = "Advanced";
-            this.Advanced.UseVisualStyleBackColor = true;
-            // 
-            // prof
-            // 
-            this.prof.Controls.Add(this.label8);
-            this.prof.Controls.Add(this.label7);
-            this.prof.Controls.Add(this.dataGridView3);
-            this.prof.Controls.Add(this.AccessLevel);
-            this.prof.Controls.Add(this.Role);
-            this.prof.Controls.Add(this.Email);
-            this.prof.Controls.Add(this.Username);
-            this.prof.Controls.Add(this.FullName);
-            this.prof.Controls.Add(this.userpfp);
-            this.prof.Location = new System.Drawing.Point(4, 4);
-            this.prof.Name = "prof";
-            this.prof.Padding = new System.Windows.Forms.Padding(3);
-            this.prof.Size = new System.Drawing.Size(1546, 815);
-            this.prof.TabIndex = 8;
-            this.prof.Text = "Profile";
-            this.prof.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1546, 815);
-            this.tabPage1.TabIndex = 9;
-            this.tabPage1.Text = "Default";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1540, 809);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Select a menu from sidebar";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // JobInfo
-            // 
-            this.JobInfo.Controls.Add(this.AssignedEmployees);
-            this.JobInfo.Controls.Add(this.TimeInstances);
-            this.JobInfo.Controls.Add(this.JobNotes);
-            this.JobInfo.Controls.Add(this.label4);
-            this.JobInfo.Controls.Add(this.NoOfDays);
-            this.JobInfo.Controls.Add(this.NoOfBoxes);
-            this.JobInfo.Controls.Add(this.Fragiles);
-            this.JobInfo.Controls.Add(this.pictureBox11);
-            this.JobInfo.Controls.Add(this.CustomerPhoneNumber);
-            this.JobInfo.Controls.Add(this.CustomerEmail);
-            this.JobInfo.Controls.Add(this.CustomerName);
-            this.JobInfo.Controls.Add(this.label6);
-            this.JobInfo.Controls.Add(this.DateStarting);
-            this.JobInfo.Controls.Add(this.label5);
-            this.JobInfo.Controls.Add(this.BuildingBPostcode);
-            this.JobInfo.Controls.Add(this.BuildingBReassembly);
-            this.JobInfo.Controls.Add(this.BuildingBRooms);
-            this.JobInfo.Controls.Add(this.pictureBox10);
-            this.JobInfo.Controls.Add(this.BuildingBAddress);
-            this.JobInfo.Controls.Add(this.BuildingBType);
-            this.JobInfo.Controls.Add(this.label3);
-            this.JobInfo.Controls.Add(this.BuildingAPacking);
-            this.JobInfo.Controls.Add(this.BuildingADissasembly);
-            this.JobInfo.Controls.Add(this.BuildingARooms);
-            this.JobInfo.Controls.Add(this.pictureBox7);
-            this.JobInfo.Controls.Add(this.BuildingAAddress);
-            this.JobInfo.Controls.Add(this.BuildingABuildingType);
-            this.JobInfo.Controls.Add(this.pictureBox6);
-            this.JobInfo.Controls.Add(this.pictureBox5);
-            this.JobInfo.Location = new System.Drawing.Point(4, 4);
-            this.JobInfo.Name = "JobInfo";
-            this.JobInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.JobInfo.Size = new System.Drawing.Size(1546, 815);
-            this.JobInfo.TabIndex = 10;
-            this.JobInfo.Text = "JobInfo";
-            this.JobInfo.UseVisualStyleBackColor = true;
-            // 
-            // TimeInstances
-            // 
-            this.TimeInstances.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic);
-            this.TimeInstances.Location = new System.Drawing.Point(626, 444);
-            this.TimeInstances.Name = "TimeInstances";
-            this.TimeInstances.Size = new System.Drawing.Size(294, 350);
-            this.TimeInstances.TabIndex = 30;
-            this.TimeInstances.Text = "label7";
-            this.TimeInstances.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // JobNotes
-            // 
-            this.JobNotes.AutoSize = true;
-            this.JobNotes.Location = new System.Drawing.Point(679, 62);
-            this.JobNotes.Name = "JobNotes";
-            this.JobNotes.Size = new System.Drawing.Size(35, 13);
-            this.JobNotes.TabIndex = 29;
-            this.JobNotes.Text = "label7";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(675, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 37);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Job Specific Notes";
-            // 
-            // NoOfDays
-            // 
-            this.NoOfDays.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoOfDays.Location = new System.Drawing.Point(626, 384);
-            this.NoOfDays.Name = "NoOfDays";
-            this.NoOfDays.Size = new System.Drawing.Size(294, 47);
-            this.NoOfDays.TabIndex = 27;
-            this.NoOfDays.Text = "label3";
-            this.NoOfDays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // NoOfBoxes
-            // 
-            this.NoOfBoxes.AutoSize = true;
-            this.NoOfBoxes.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoOfBoxes.Location = new System.Drawing.Point(795, 312);
-            this.NoOfBoxes.Name = "NoOfBoxes";
-            this.NoOfBoxes.Size = new System.Drawing.Size(70, 30);
-            this.NoOfBoxes.TabIndex = 26;
-            this.NoOfBoxes.Text = "label4";
-            // 
-            // Fragiles
-            // 
-            this.Fragiles.AutoSize = true;
-            this.Fragiles.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fragiles.Location = new System.Drawing.Point(677, 312);
-            this.Fragiles.Name = "Fragiles";
-            this.Fragiles.Size = new System.Drawing.Size(70, 30);
-            this.Fragiles.TabIndex = 25;
-            this.Fragiles.Text = "label4";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::Movers_Scheduling_Program.Properties.Resources.Group_57;
-            this.pictureBox11.Location = new System.Drawing.Point(626, 292);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(294, 102);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 24;
-            this.pictureBox11.TabStop = false;
-            // 
-            // CustomerPhoneNumber
-            // 
-            this.CustomerPhoneNumber.AutoSize = true;
-            this.CustomerPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic);
-            this.CustomerPhoneNumber.Location = new System.Drawing.Point(74, 252);
-            this.CustomerPhoneNumber.Name = "CustomerPhoneNumber";
-            this.CustomerPhoneNumber.Size = new System.Drawing.Size(89, 37);
-            this.CustomerPhoneNumber.TabIndex = 23;
-            this.CustomerPhoneNumber.Text = "label7";
-            // 
-            // CustomerEmail
-            // 
-            this.CustomerEmail.AutoSize = true;
-            this.CustomerEmail.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic);
-            this.CustomerEmail.Location = new System.Drawing.Point(74, 215);
-            this.CustomerEmail.Name = "CustomerEmail";
-            this.CustomerEmail.Size = new System.Drawing.Size(89, 37);
-            this.CustomerEmail.TabIndex = 22;
-            this.CustomerEmail.Text = "label7";
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.AutoSize = true;
-            this.CustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerName.Location = new System.Drawing.Point(68, 168);
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.Size = new System.Drawing.Size(124, 50);
-            this.CustomerName.TabIndex = 21;
-            this.CustomerName.Text = "label7";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 22.25F, System.Drawing.FontStyle.Italic);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(62, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 41);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Customer";
-            // 
-            // DateStarting
-            // 
-            this.DateStarting.AutoSize = true;
-            this.DateStarting.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateStarting.Location = new System.Drawing.Point(68, 60);
-            this.DateStarting.Name = "DateStarting";
-            this.DateStarting.Size = new System.Drawing.Size(137, 54);
-            this.DateStarting.TabIndex = 19;
-            this.DateStarting.Text = "label6";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 37);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Starting";
-            // 
-            // BuildingBPostcode
-            // 
-            this.BuildingBPostcode.Font = new System.Drawing.Font("Segoe UI Semilight", 22.75F, System.Drawing.FontStyle.Italic);
-            this.BuildingBPostcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BuildingBPostcode.Location = new System.Drawing.Point(1241, 322);
-            this.BuildingBPostcode.Name = "BuildingBPostcode";
-            this.BuildingBPostcode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BuildingBPostcode.Size = new System.Drawing.Size(264, 60);
-            this.BuildingBPostcode.TabIndex = 17;
-            this.BuildingBPostcode.Text = "label4";
-            // 
-            // BuildingBReassembly
-            // 
-            this.BuildingBReassembly.AutoSize = true;
-            this.BuildingBReassembly.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingBReassembly.Location = new System.Drawing.Point(1151, 453);
-            this.BuildingBReassembly.Name = "BuildingBReassembly";
-            this.BuildingBReassembly.Size = new System.Drawing.Size(70, 30);
-            this.BuildingBReassembly.TabIndex = 15;
-            this.BuildingBReassembly.Text = "label4";
-            // 
-            // BuildingBRooms
-            // 
-            this.BuildingBRooms.AutoSize = true;
-            this.BuildingBRooms.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingBRooms.Location = new System.Drawing.Point(1004, 453);
-            this.BuildingBRooms.Name = "BuildingBRooms";
-            this.BuildingBRooms.Size = new System.Drawing.Size(70, 30);
-            this.BuildingBRooms.TabIndex = 14;
-            this.BuildingBRooms.Text = "label4";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::Movers_Scheduling_Program.Properties.Resources.Frame_12;
-            this.pictureBox10.Location = new System.Drawing.Point(977, 453);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(291, 51);
-            this.pictureBox10.TabIndex = 13;
-            this.pictureBox10.TabStop = false;
-            // 
-            // BuildingBAddress
-            // 
-            this.BuildingBAddress.AutoSize = true;
-            this.BuildingBAddress.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingBAddress.Location = new System.Drawing.Point(968, 382);
-            this.BuildingBAddress.Name = "BuildingBAddress";
-            this.BuildingBAddress.Size = new System.Drawing.Size(120, 47);
-            this.BuildingBAddress.TabIndex = 12;
-            this.BuildingBAddress.Text = "label3";
-            // 
-            // BuildingBType
-            // 
-            this.BuildingBType.AutoSize = true;
-            this.BuildingBType.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingBType.Location = new System.Drawing.Point(971, 350);
-            this.BuildingBType.Name = "BuildingBType";
-            this.BuildingBType.Size = new System.Drawing.Size(73, 32);
-            this.BuildingBType.TabIndex = 11;
-            this.BuildingBType.Text = "label3";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 22.75F, System.Drawing.FontStyle.Italic);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(338, 322);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(264, 60);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
-            // 
-            // BuildingAPacking
-            // 
-            this.BuildingAPacking.AutoSize = true;
-            this.BuildingAPacking.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingAPacking.Location = new System.Drawing.Point(467, 453);
-            this.BuildingAPacking.Name = "BuildingAPacking";
-            this.BuildingAPacking.Size = new System.Drawing.Size(70, 30);
-            this.BuildingAPacking.TabIndex = 9;
-            this.BuildingAPacking.Text = "label4";
-            // 
-            // BuildingADissasembly
-            // 
-            this.BuildingADissasembly.AutoSize = true;
-            this.BuildingADissasembly.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingADissasembly.Location = new System.Drawing.Point(252, 453);
-            this.BuildingADissasembly.Name = "BuildingADissasembly";
-            this.BuildingADissasembly.Size = new System.Drawing.Size(70, 30);
-            this.BuildingADissasembly.TabIndex = 8;
-            this.BuildingADissasembly.Text = "label4";
-            // 
-            // BuildingARooms
-            // 
-            this.BuildingARooms.AutoSize = true;
-            this.BuildingARooms.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingARooms.Location = new System.Drawing.Point(105, 453);
-            this.BuildingARooms.Name = "BuildingARooms";
-            this.BuildingARooms.Size = new System.Drawing.Size(70, 30);
-            this.BuildingARooms.TabIndex = 7;
-            this.BuildingARooms.Text = "label4";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Movers_Scheduling_Program.Properties.Resources.Frame_12;
-            this.pictureBox7.Location = new System.Drawing.Point(78, 453);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(491, 51);
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
-            // 
-            // BuildingAAddress
-            // 
-            this.BuildingAAddress.AutoSize = true;
-            this.BuildingAAddress.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingAAddress.Location = new System.Drawing.Point(69, 382);
-            this.BuildingAAddress.Name = "BuildingAAddress";
-            this.BuildingAAddress.Size = new System.Drawing.Size(120, 47);
-            this.BuildingAAddress.TabIndex = 4;
-            this.BuildingAAddress.Text = "label3";
-            // 
-            // BuildingABuildingType
-            // 
-            this.BuildingABuildingType.AutoSize = true;
-            this.BuildingABuildingType.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuildingABuildingType.Location = new System.Drawing.Point(72, 350);
-            this.BuildingABuildingType.Name = "BuildingABuildingType";
-            this.BuildingABuildingType.Size = new System.Drawing.Size(73, 32);
-            this.BuildingABuildingType.TabIndex = 3;
-            this.BuildingABuildingType.Text = "label3";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Movers_Scheduling_Program.Properties.Resources.Rectangle_66;
-            this.pictureBox6.Location = new System.Drawing.Point(960, 302);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(551, 204);
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Movers_Scheduling_Program.Properties.Resources.Rectangle_66;
-            this.pictureBox5.Location = new System.Drawing.Point(55, 305);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(551, 204);
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(20);
-            this.panel3.Size = new System.Drawing.Size(350, 100);
-            this.panel3.TabIndex = 2;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = global::Movers_Scheduling_Program.Properties.Resources.Red_MOVERS_Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(20, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(310, 60);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.bunifuButton7);
-            this.panel2.Controls.Add(this.bunifuButton6);
-            this.panel2.Controls.Add(this.bunifuButton5);
-            this.panel2.Controls.Add(this.bunifuButton4);
-            this.panel2.Controls.Add(this.bunifuButton3);
-            this.panel2.Controls.Add(this.bunifuButton2);
-            this.panel2.Controls.Add(this.bunifuButton1);
-            this.panel2.Controls.Add(this.Recents);
-            this.panel2.Controls.Add(this.rjButton1);
-            this.panel2.Controls.Add(this.bunifuLabel1);
-            this.panel2.Controls.Add(this.bunifuSeparator1);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 941);
-            this.panel2.TabIndex = 4;
             // 
             // bunifuButton7
             // 
@@ -1687,22 +2037,6 @@
             this.Recents.UseDefaultRadiusAndThickness = true;
             this.Recents.Click += new System.EventHandler(this.Recents_Click);
             // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuLabel1.Location = new System.Drawing.Point(20, 652);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(161, 37);
-            this.bunifuLabel1.TabIndex = 5;
-            this.bunifuLabel1.Text = "Filter Jobs By";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
@@ -1718,6 +2052,17 @@
             this.bunifuSeparator1.Size = new System.Drawing.Size(300, 14);
             this.bunifuSeparator1.TabIndex = 4;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = global::Movers_Scheduling_Program.Properties.Resources.Red_MOVERS_Logo;
+            this.pictureBox3.Location = new System.Drawing.Point(20, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(310, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1730,198 +2075,36 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // AssignedEmployees
+            // pictureBox9
             // 
-            this.AssignedEmployees.AllowUserToAddRows = false;
-            this.AssignedEmployees.AllowUserToDeleteRows = false;
-            this.AssignedEmployees.AllowUserToOrderColumns = true;
-            this.AssignedEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AssignedEmployees.Location = new System.Drawing.Point(55, 537);
-            this.AssignedEmployees.Name = "AssignedEmployees";
-            this.AssignedEmployees.ReadOnly = true;
-            this.AssignedEmployees.Size = new System.Drawing.Size(551, 257);
-            this.AssignedEmployees.TabIndex = 31;
+            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox9.Image = global::Movers_Scheduling_Program.Properties.Resources.truk_ezgif_com_crop__1_;
+            this.pictureBox9.Location = new System.Drawing.Point(1736, 19);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(115, 81);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 4;
+            this.pictureBox9.TabStop = false;
             // 
-            // userpfp
+            // pictureBox2
             // 
-            this.userpfp.AllowFocused = false;
-            this.userpfp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.userpfp.AutoSizeHeight = true;
-            this.userpfp.BorderRadius = 146;
-            this.userpfp.Image = ((System.Drawing.Image)(resources.GetObject("userpfp.Image")));
-            this.userpfp.IsCircle = true;
-            this.userpfp.Location = new System.Drawing.Point(42, 42);
-            this.userpfp.Name = "userpfp";
-            this.userpfp.Size = new System.Drawing.Size(292, 292);
-            this.userpfp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userpfp.TabIndex = 0;
-            this.userpfp.TabStop = false;
-            this.userpfp.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox2.Image = global::Movers_Scheduling_Program.Properties.Resources.truk_ezgif_com_crop__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(2588, 19);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(115, 81);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
-            // FullName
+            // FirstName
             // 
-            this.FullName.AutoSize = true;
-            this.FullName.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-            this.FullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FullName.Location = new System.Drawing.Point(405, 67);
-            this.FullName.Name = "FullName";
-            this.FullName.Size = new System.Drawing.Size(137, 54);
-            this.FullName.TabIndex = 1;
-            this.FullName.Text = "label7";
-            // 
-            // Username
-            // 
-            this.Username.AutoSize = true;
-            this.Username.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-            this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Username.Location = new System.Drawing.Point(405, 175);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(137, 54);
-            this.Username.TabIndex = 2;
-            this.Username.Text = "label7";
-            this.Username.Click += new System.EventHandler(this.Username_Click);
-            // 
-            // Email
-            // 
-            this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Email.Location = new System.Drawing.Point(981, 80);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(96, 37);
-            this.Email.TabIndex = 3;
-            this.Email.Text = "label7";
-            // 
-            // Role
-            // 
-            this.Role.AutoSize = true;
-            this.Role.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Role.Location = new System.Drawing.Point(981, 188);
-            this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(96, 37);
-            this.Role.TabIndex = 4;
-            this.Role.Text = "label7";
-            // 
-            // AccessLevel
-            // 
-            this.AccessLevel.AutoSize = true;
-            this.AccessLevel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.AccessLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AccessLevel.Location = new System.Drawing.Point(981, 296);
-            this.AccessLevel.Name = "AccessLevel";
-            this.AccessLevel.Size = new System.Drawing.Size(96, 37);
-            this.AccessLevel.TabIndex = 5;
-            this.AccessLevel.Text = "label7";
-            // 
-            // rjButton2
-            // 
-            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton2.BorderRadius = 18;
-            this.rjButton2.BorderSize = 0;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(1319, 137);
-            this.rjButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(178, 62);
-            this.rjButton2.TabIndex = 14;
-            this.rjButton2.Text = "Show";
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
-            // 
-            // rjButton4
-            // 
-            this.rjButton4.BackColor = System.Drawing.Color.White;
-            this.rjButton4.BackgroundColor = System.Drawing.Color.White;
-            this.rjButton4.BorderColor = System.Drawing.Color.Black;
-            this.rjButton4.BorderRadius = 18;
-            this.rjButton4.BorderSize = 2;
-            this.rjButton4.FlatAppearance.BorderSize = 0;
-            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton4.ForeColor = System.Drawing.Color.Black;
-            this.rjButton4.Location = new System.Drawing.Point(1061, 580);
-            this.rjButton4.Margin = new System.Windows.Forms.Padding(0);
-            this.rjButton4.Name = "rjButton4";
-            this.rjButton4.Size = new System.Drawing.Size(458, 62);
-            this.rjButton4.TabIndex = 15;
-            this.rjButton4.Text = "Clear";
-            this.rjButton4.TextColor = System.Drawing.Color.Black;
-            this.rjButton4.UseVisualStyleBackColor = false;
-            // 
-            // rjButton3
-            // 
-            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton3.BorderRadius = 18;
-            this.rjButton3.BorderSize = 0;
-            this.rjButton3.FlatAppearance.BorderSize = 0;
-            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton3.ForeColor = System.Drawing.Color.White;
-            this.rjButton3.Location = new System.Drawing.Point(1061, 494);
-            this.rjButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(458, 62);
-            this.rjButton3.TabIndex = 14;
-            this.rjButton3.Text = "Confirm";
-            this.rjButton3.TextColor = System.Drawing.Color.White;
-            this.rjButton3.UseVisualStyleBackColor = false;
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 18;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(15, 117);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(320, 62);
-            this.rjButton1.TabIndex = 0;
-            this.rjButton1.Text = "New Booking";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(61, 429);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1025, 350);
-            this.dataGridView3.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(409, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 25);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Username";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(409, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 25);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Full Name";
+            this.FirstName.Location = new System.Drawing.Point(82, 136);
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Size = new System.Drawing.Size(100, 20);
+            this.FirstName.TabIndex = 19;
             // 
             // Home
             // 
@@ -1941,36 +2124,40 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.TopBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.Page.ResumeLayout(false);
             this.Recemts.ResumeLayout(false);
             this.Recemts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Employees.ResumeLayout(false);
+            this.Employees.PerformLayout();
             this.Date.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.prof.ResumeLayout(false);
             this.prof.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.JobInfo.ResumeLayout(false);
             this.JobInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AssignedEmployees)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userpfp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AssignedEmployees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userpfp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2062,5 +2249,17 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label Price;
+        private System.Windows.Forms.Label label12;
+        private CustomControls.RJControls.RJButton CancelButton;
+        private System.Windows.Forms.Label ConfirmedNotConfirmed;
+        private CustomControls.RJControls.RJButton rjButton5;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox FirstName;
     }
 }

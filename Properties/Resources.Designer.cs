@@ -213,6 +213,16 @@ namespace Movers_Scheduling_Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Frame_101 {
+            get {
+                object obj = ResourceManager.GetObject("Frame 101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frame_12 {
             get {
                 object obj = ResourceManager.GetObject("Frame 12", resourceCulture);
@@ -276,6 +286,16 @@ namespace Movers_Scheduling_Program.Properties {
         internal static System.Drawing.Bitmap irisless {
             get {
                 object obj = ResourceManager.GetObject("irisless", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lihgli {
+            get {
+                object obj = ResourceManager.GetObject("lihgli", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
